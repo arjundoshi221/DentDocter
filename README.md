@@ -1,1 +1,1 @@
-# battery_cell_detection
+# battery_cell_dent_detection
