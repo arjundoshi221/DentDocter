@@ -15,8 +15,10 @@ Roboflow uses a process called video frame extraction to convert a video file in
 *	Augmentation techniques applied include Horizontal and Vertical Flips, Rotation between -15° and +15°, and Exposure adjustment of the bounding box between -20% and +20%.
 
 Annotation examples:
-![image](https://user-images.githubusercontent.com/96420770/229296226-65412aa5-09f7-4c19-be93-a7685f372910.png)
-![image](https://user-images.githubusercontent.com/96420770/229296232-d0139473-ce95-4967-a4e3-aaf8c29db80d.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/96420770/229296226-65412aa5-09f7-4c19-be93-a7685f372910.png" alt="image1" width="300">
+  <img src="https://user-images.githubusercontent.com/96420770/229296232-d0139473-ce95-4967-a4e3-aaf8c29db80d.png" alt="image2" width="300">
+</p>
 
 ## Model
 
