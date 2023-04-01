@@ -3,6 +3,20 @@
 ## Introduction
 
 ## Data
+With the help of Roboflow we uploaded our video datasets, augmented and preprocessed our data. The platform also supports integration with popular deep learning frameworks like TensorFlow, PyTorch, and Keras, as well as export to common formats like ONNX and TensorFlow Lite for deployment on various platforms. 
+Roboflow uses a process called video frame extraction to convert a video file into a set of individual image files. This process involves taking each frame of the video and saving it as a separate image file. The frames are then saved as individual image files, with a filename that includes the frame number and file extension (e.g., frame_001.jpg, frame_002.jpg, etc.).
+*	Uploaded 40 slow-motion videos of dented batteries to Roboflow to collect data from different angles.
+* Used Roboflow to extract individual image frames from the videos and preprocess the data.
+*	Saved 5 frames per second, resulting in 4000 images.
+*	Applied Auto-Orient and Resize techniques to preprocess the images (640x640).
+*	Annotated dent images to divide them into different classes and marked others as null.
+*	Split the dataset into train, validation, and test sets in an 80:10:10 ratio.
+*	Generated augmented versions of each image in the training set to create new training examples for the model to learn from.
+*	Augmentation techniques applied include Horizontal and Vertical Flips, Rotation between -15° and +15°, and Exposure adjustment of the bounding box between -20% and +20%.
+
+Annotation examples:
+![image](https://user-images.githubusercontent.com/96420770/229296226-65412aa5-09f7-4c19-be93-a7685f372910.png)
+![image](https://user-images.githubusercontent.com/96420770/229296232-d0139473-ce95-4967-a4e3-aaf8c29db80d.png)
 
 ## Model
 
