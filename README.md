@@ -22,7 +22,12 @@ Annotation examples:
 
 ## Usage
 
-## References
+## Usage and References
+* Batteries with dents can be dangerous as they can expand and/or leak. This could damage electronic components. This battery cell dent detection model can be deployed using Arduino and RaspberryPi to detect such dented battery cells. 
+* This has wide applications in electric car manufacturing where machines can be used to filter out unhealthy cells. This can help to prevent safety issues such as thermal runaway, which can occur when a damaged battery cell overheats and ignites. 
+* This can also be used to ensure the safety and reliability of batteries used in aircrafts. Dents or deformations in battery cells can occur due to vibrations, shocks, or impacts during flight. Detecting these issues early on can help to prevent catastrophic failures and ensure that the batteries meet the strict safety standards required for aviation applications. 
+* We have used ONNX to train the model which makes it framework agnostic, making it independent of any set framework. This allows developers to move between frameworks depending on what works best for the given development process.
+
 * Roboflow - [https://roboflow.com/models/object-detection](https://roboflow.com/model/yolov8)
 * Ultralytics documentation - https://docs.ultralytics.com/
 * YOLO - https://arxiv.org/pdf/1506.02640.pdf
