@@ -1,20 +1,15 @@
 # Battery Cell Dent Detection
 
-
-
-
 https://user-images.githubusercontent.com/96538649/229579337-b31416a8-79ed-4c0d-acbe-f258db50ec62.mp4
-
-
-
 
 ## Introduction
 
 ### Motive:
+
 Battery cells are integral components of many electronic devices and play a crucial role in powering them. However, damaged or dented battery cells can be hazardous, leading to possible leaks and damages to the surrounding electronic components. To address this issue, a solution involving object detection through machine learning was developed using the YOLO-V8 architecture. We aim to reduce the number of dented cells that go into the market through deployment of a robust algorithm leading to detection and elimination of such faulty devices.
 
-
 ### Process in brief:
+
 To begin with, 40 slow-motion videos of dented batteries were uploaded to Roboflow, a platform that allows the extraction of individual image frames from videos and provides preprocessing techniques such as Auto-Orient and Resize. In total, 4000 images were extracted, with 5 frames per second. The images were annotated to divide the dented batteries into different classes, and null annotations were added to images with no dents. The dataset was then split into a train, validation, and test set in an 80:10:10 ratio. More details on this will be taken up in 'Data'
 
 The YOLO-V8 algorithm uses a residual block to divide the image into various grids, where each grid detects objects that appear within them. A single bounding box regression is used to predict the height, width, center, and class of objects, with IOU (Intersection Over Union) used to eliminate false positives.
@@ -22,10 +17,12 @@ The YOLO-V8 algorithm uses a residual block to divide the image into various gri
 The battery cell dent detection model can be deployed using Arduino and RaspberryPi to detect damaged cells. This technology can be applied in various industries, such as electric car manufacturing, where it can be used to filter out unhealthy cells and prevent safety issues such as thermal runaway. This technology can also be utilized to ensure the safety and reliability of batteries used in aircraft.
 
 ### End Use:
+
 To use YOLOv8 in a production factory for quality control, a camera system should be set up at the appropriate location on the production line to capture images of cells as they move along. These images can then be fed into the algorithm for analysis. The YOLOv8 algorithm will analyze each image, identify cells with dents, and alert the factory's quality control team if any cells with dents are detected. The quality control team can then take appropriate action to ensure that only cells without dents are sent out for further processing.
 
-The deployment of YOLOv8 for cell dent detection in a production factory has several benefits. 
-- Increase the accuracy and efficiency of the quality control process, as the algorithm can analyze images much faster and more accurately than a human can. 
+The deployment of YOLOv8 for cell dent detection in a production factory has several benefits.
+
+- Increase the accuracy and efficiency of the quality control process, as the algorithm can analyze images much faster and more accurately than a human can.
 - Save time and money for the factory by reducing the need for manual inspections.
 - Ensure that only high-quality cells are sent out for further processing, which can ultimately improve the quality of the final product.
 
@@ -84,6 +81,9 @@ The YOLO algorithm works using the following three techiques:
   Each grid cell is responsible for predicting the bounding boxes and confidence scores. The IOU is equal to 1 if the predicted bounding box is the same as the real box. This mechanism eliminates bounding boxes that are not equal to the real box.
 
 ## Usage
+
+**Inference using pretrained model**
+
 ```python
 import cv2
 from ultralytics import YOLO
@@ -91,12 +91,11 @@ import numpy as np
 
 cap = cv2.VideoCapture("YOUR_VIDEO_HERE")
 
-model = YOLO("weights/name.pt")
+model = YOLO("weights/cell_detection_YOLO.pt")
 
 
 while(True):
 	ret,frame=cap.read()
-	
 	results = model(frame,device='cpu')
 	result=results[0]
 
@@ -107,17 +106,27 @@ while(True):
 	for clss,bbox in zip(classes,bboxes):
 		x,y,x2,y2 = bbox
 		cv2.rectangle(frame,(x,y),(x2,y2),(0,0,255),2)
-		# cv2.putText(frame,str(clss),(x,y-5),cv2.FONT_HERSHEY_PLAIN,2,(0,0,255),2)
-        
+
+
 	cv2.imshow("Vid",frame)
 
 	key=cv2.waitKey(1)
-	
+
 	if key==27:
 		break
 
 cap.release()
 cv2.destroyAllWindows()
+```
+
+**Using python scripts:**
+
+```sh
+# Train the model
+python src/train.py --model=yolov8n.pt --data=data.yaml --epochs=300 export=onnx
+
+# Predict on model
+python src/predict.py --model=yolov8n.pt --image_path=cell_dent.png
 ```
 
 ## References
