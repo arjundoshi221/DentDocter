@@ -49,7 +49,7 @@ The YOLO algorithm works using the following three techiques:
   - Height (bh)
   - Class (for example: person, car, traffic light)
   - Boudning box center (bx, by)
-    ![bb.png](https://www.section.io/engineering-education/introduction-to-yolo-algorithm-for-object-detection/bounding-box.png)
+    ![bb.png](assets/bounding-box.png)
     YOLO uses a single bounding box regression to predict the height, width, center and class of objects.
 - **IOU** or Intersection Over Union: This is a phenomenon in object detection that describes how boxes overlap. YOLO uses IOU to provide an output box that surrounds the objects perfectly.
   Each grid cell is responsible for predicting the bounding boxes and confidence scores. The IOU is equal to 1 if the predicted bounding box is the same as the real box. This mechanism eliminates bounding boxes that are not equal to the real box.
