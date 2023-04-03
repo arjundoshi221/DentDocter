@@ -138,6 +138,5 @@ python src/predict.py --model=yolov8n.pt --image_path=cell_dent.png
 - ONNX - https://towardsdatascience.com/onnx-the-standard-for-interoperable-deep-learning-models-a47dfbdf9a09
 - Tensorflow Lite - https://www.tensorflow.org/lite/examples/object_detection/overview
 
-## Presentation:
-https://www.canva.com/design/DAFfEYCg88o/at0mVxrTTsd3CVBiGAQM7w/view?utm_content=DAFfEYCg88o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
+### [Presentation](https://www.canva.com/design/DAFfEYCg88o/at0mVxrTTsd3CVBiGAQM7w/view?utm_content=DAFfEYCg88o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
