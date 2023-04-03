@@ -40,7 +40,7 @@ Why YOLO is preferred over other object detection alogrithm:
 The YOLO algorithm works using the following three techiques:
 
 - **Residual block**: First, the image is divided into various grids. Each grid has a dimension of $s*s$.
-  ![alt.png](https://www.guidetomlandai.com/assets/img/computer_vision/grid.png)
+  ![alt.png](assets/grid.png)
 
   In the above image, there are many grid cells of equal dimension. Every grid cell will detect objects that appear within them. For example, if an object center appears within a grid cell, then this cell will be responsible for detecting it.
 
