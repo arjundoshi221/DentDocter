@@ -121,7 +121,7 @@ cv2.destroyAllWindows()
 
 **Using python scripts:**
 
-```sh
+```console
 # Train the model
 python src/train.py --model=yolov8n.pt --data=data.yaml --epochs=300 export=onnx
 
