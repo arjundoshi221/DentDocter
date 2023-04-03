@@ -76,12 +76,41 @@ The YOLO algorithm works using the following three techiques:
   Each grid cell is responsible for predicting the bounding boxes and confidence scores. The IOU is equal to 1 if the predicted bounding box is the same as the real box. This mechanism eliminates bounding boxes that are not equal to the real box.
 
 ## Usage
+```python
+import cv2
+from ultralytics import YOLO
+import numpy as np
 
-- Batteries with dents can be dangerous as they can expand and/or leak. This could damage electronic components. This battery cell dent detection model can be deployed using Arduino and RaspberryPi to detect such dented battery cells.
-- This has wide applications in electric car manufacturing where machines can be used to filter out unhealthy cells. This can help to prevent safety issues such as thermal runaway, which can occur when a damaged battery cell overheats and ignites.
-- This can also be used to ensure the safety and reliability of batteries used in aircrafts. Dents or deformations in battery cells can occur due to vibrations, shocks, or impacts during flight. Detecting these issues early on can help to prevent catastrophic failures and ensure that the batteries meet the strict safety standards required for aviation applications.
-- We have used ONNX to train the model which makes it framework agnostic, making it independent of any set framework. This allows developers to move between frameworks depending on what works best for the given development process.
+cap = cv2.VideoCapture("YOUR_VIDEO_HERE")
 
+model = YOLO("weights/name.pt")
+
+
+while(True):
+	ret,frame=cap.read()
+	
+	results = model(frame,device='cpu')
+	result=results[0]
+
+
+	bboxes = np.array(result.boxes.xyxy.cpu(),dtype='int')
+	classes=np.array(result.boxes.cls.cpu(),dtype='int')
+
+	for clss,bbox in zip(classes,bboxes):
+		x,y,x2,y2 = bbox
+		cv2.rectangle(frame,(x,y),(x2,y2),(0,0,255),2)
+		# cv2.putText(frame,str(clss),(x,y-5),cv2.FONT_HERSHEY_PLAIN,2,(0,0,255),2)
+        
+	cv2.imshow("Vid",frame)
+
+	key=cv2.waitKey(1)
+	
+	if key==27:
+		break
+
+cap.release()
+cv2.destroyAllWindows()
+```
 ## References
 
 - Roboflow - [https://roboflow.com/models/object-detection](https://roboflow.com/model/yolov8)
