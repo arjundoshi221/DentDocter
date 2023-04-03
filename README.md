@@ -1,4 +1,4 @@
-# Cell Dent Detection
+# Battery Cell Dent Detection
 
 ## Introduction
 
@@ -16,7 +16,10 @@ The battery cell dent detection model can be deployed using Arduino and Raspberr
 ### Useage:
 To use YOLOv8 in a production factory for quality control, a camera system should be set up at the appropriate location on the production line to capture images of cells as they move along. These images can then be fed into the algorithm for analysis. The YOLOv8 algorithm will analyze each image, identify cells with dents, and alert the factory's quality control team if any cells with dents are detected. The quality control team can then take appropriate action to ensure that only cells without dents are sent out for further processing.
 
-The deployment of YOLOv8 for cell dent detection in a production factory has several benefits. First, it can increase the accuracy and efficiency of the quality control process, as the algorithm can analyze images much faster and more accurately than a human can. Second, it can save time and money for the factory by reducing the need for manual inspections. Finally, it can help to ensure that only high-quality cells are sent out for further processing, which can ultimately improve the quality of the final product.
+The deployment of YOLOv8 for cell dent detection in a production factory has several benefits. 
+- Increase the accuracy and efficiency of the quality control process, as the algorithm can analyze images much faster and more accurately than a human can. 
+- Save time and money for the factory by reducing the need for manual inspections.
+- Ensure that only high-quality cells are sent out for further processing, which can ultimately improve the quality of the final product.
 
 In conclusion, the YOLO-V8 object detection algorithm, coupled with the Roboflow platform, has demonstrated significant potential in detecting damaged battery cells. This technology can contribute significantly to ensuring the safety and reliability of electronic devices, as well as in industrial applications where battery cells play a crucial role.
 
