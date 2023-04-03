@@ -1,5 +1,11 @@
 # Battery Cell Dent Detection
 
+
+
+
+https://user-images.githubusercontent.com/96538649/229570650-53779f94-4fd2-43b4-996b-d47d7ccf1e2a.mp4
+
+
 ## Introduction
 
 ### Motive:
@@ -111,6 +117,7 @@ while(True):
 cap.release()
 cv2.destroyAllWindows()
 ```
+
 ## References
 
 - Roboflow - [https://roboflow.com/models/object-detection](https://roboflow.com/model/yolov8)
