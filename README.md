@@ -128,3 +128,7 @@ cv2.destroyAllWindows()
 - YOLO Object Detection using OpenCV and Python - https://towardsdatascience.com/yolo-object-detection-with-opencv-and-python-21e50ac599e9
 - ONNX - https://towardsdatascience.com/onnx-the-standard-for-interoperable-deep-learning-models-a47dfbdf9a09
 - Tensorflow Lite - https://www.tensorflow.org/lite/examples/object_detection/overview
+
+## Presentation:
+https://www.canva.com/design/DAFfEYCg88o/at0mVxrTTsd3CVBiGAQM7w/view?utm_content=DAFfEYCg88o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
+
