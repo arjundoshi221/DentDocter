@@ -33,6 +33,9 @@ In conclusion, the YOLO-V8 object detection algorithm, coupled with the Roboflow
 With the help of Roboflow we uploaded our video datasets, augmented and preprocessed our data. The platform also supports integration with popular deep learning frameworks like TensorFlow, PyTorch, and Keras, as well as export to common formats like ONNX and TensorFlow Lite for deployment on various platforms.
 Roboflow uses a process called video frame extraction to convert a video file into a set of individual image files. This process involves taking each frame of the video and saving it as a separate image file. The frames are then saved as individual image files, with a filename that includes the frame number and file extension (e.g., frame_001.jpg, frame_002.jpg, etc.).
 
+Ultralytics uses the Albumentations library to augment the training data used to train the YOLOv5 object detection model. Albumentations is a Python library for image augmentation that provides a wide range of techniques to improve the quality and quantity of the training data. It supports a variety of image formats and can be easily integrated into the training pipeline of deep learning frameworks like PyTorch, TensorFlow, and MXNet.
+Ultralytics provides an implementation of YOLOv8 that includes Albumentations in its training pipeline. The user can configure the augmentation parameters by modifying a YAML configuration file that specifies the augmentation techniques and their hyperparameters. The augmented images are then fed into the YOLOv8 model for training using PyTorch.
+
 - Uploaded 40 slow-motion videos of dented batteries to Roboflow to collect data from different angles.
 - Used Roboflow to extract individual image frames from the videos and preprocess the data.
 - Saved 5 frames per second, resulting in 4000 images.
