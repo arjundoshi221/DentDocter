@@ -95,7 +95,7 @@ import numpy as np
 cap = cv2.VideoCapture("YOUR_VIDEO_HERE")
 
 model = YOLO("weights/cell_detection_YOLO.pt")
-
+pTime=0
 
 while(True):
 	ret,frame=cap.read()
@@ -109,6 +109,11 @@ while(True):
 	for clss,bbox in zip(classes,bboxes):
 		x,y,x2,y2 = bbox
 		cv2.rectangle(frame,(x,y),(x2,y2),(0,0,255),2)
+	
+	start_time = time.time()
+    	elapsed_time = start_time - pTime
+    	fps = 1 / elapsed_time
+    	pTime = start_time
 
 
 	cv2.imshow("Vid",frame)
