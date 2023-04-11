@@ -1,6 +1,10 @@
 # Battery Cell Dent Detection
 
-https://user-images.githubusercontent.com/96538649/229579337-b31416a8-79ed-4c0d-acbe-f258db50ec62.mp4
+
+
+https://user-images.githubusercontent.com/96538649/231153361-8e2a4394-14e5-4b58-a2db-9d06584efb86.mp4
+
+
 
 ## Introduction
 
